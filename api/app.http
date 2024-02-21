@@ -1,0 +1,77 @@
+
+//health check
+GET http://localhost:8000/health
+//get all post
+### Request
+GET http://localhost:8000/api/posts
+
+### Request // filter posts with pages and limit
+GET http://localhost:8000/api/posts?page=1&limit=2
+
+### Request // order posts asc or desc
+GET http://localhost:8000/api/posts?order=desc
+
+### Request // filter posts with pages and limit && order posts asc or desc
+GET http://localhost:8000/api/posts?page=1&limit=3&order=asc
+
+### //get post by id
+GET http://localhost:8000/api/posts/12
+
+### //create post
+POST http://localhost:8000/api/posts
+Content-Type: application/json
+
+{
+    "post_title": "post from rest client5",
+    "post_content": "Content of the post5",
+    "author_id": 2
+}
+
+### //update post
+PUT http://localhost:8000/api/posts/12
+Content-Type: application/json
+
+{
+    "post_title": "test13",
+    "post_content": "Updated content",
+    "author_id": 1
+}
+
+### //delete post
+DELETE http://localhost:8000/api/posts/5
+
+### //get user
+GET http://localhost:8000/api/users/profile/1
+
+### //register user
+POST http://localhost:8000/api/users/register
+content-Type: application/json
+
+{
+    "username": "testuser",
+    "email" : "test@gmaildsdfsdf.com",
+    "password" : "kevin"
+}
+### //login user
+
+POST http://localhost:8000/api/users/auth/login
+content-Type: application/json
+
+{
+    "username": "testuser",
+    "password" : "kevin"
+}
+### //update user
+PUT http://localhost:8000/api/users/profile/2
+content-Type: application/json
+
+{
+    "username": "testuser1",
+      "email" : "test@gmailf.com"  
+}
+
+### //update user
+DELETE http://localhost:8000/api/users/profile/2
+
+
+
